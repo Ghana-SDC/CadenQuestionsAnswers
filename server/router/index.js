@@ -11,7 +11,7 @@ router.route('/answers')
   .post(answerController.post);
 
 router.route('/questions/:id')
-  .get(questionsIdController.get)
+  .get(productController.get)
   .put(questionsIdController.put)
 
 router.route('/products/:product_id')

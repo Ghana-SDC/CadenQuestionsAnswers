@@ -27,6 +27,7 @@ export default class App extends React.Component {
     super()
     
     this.state = {
+      productId: 1,
       questions: [],
       answers: [],
     }
@@ -35,11 +36,12 @@ export default class App extends React.Component {
 
   getQuestionData() {
     this.getAnswerData();
-    axios.get('/questions').then(data => {
+    axios.get('/questions/' + this.state.productId).then(data => {
       data.data.sort((a, b) => {
         return a.id - b.id
       })
       this.setState({
+        productId: 1,
         questions: data.data,
         answers: this.state.answers
       })
@@ -52,6 +54,7 @@ export default class App extends React.Component {
   getAnswerData() {
     axios.get('/answers').then(data => {
       this.setState({
+        productId: 1,
         questions: this.state.questions,
         answers: data.data
       })

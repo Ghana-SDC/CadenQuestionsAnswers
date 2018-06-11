@@ -41,8 +41,10 @@ const questionsIdController = {
 
 const productController = {
   get: (req, res) => {
-    Question.findAll({where: {product_id: req.params.product_id}}).then(found => {
+    console.log(req.params)
+    Question.findAll({where: {product_id: req.params.id}}).then(found => {
       res.status(200).send(found);
+      console.log('successfully fetched data by product_id')
     }).catch(err => {
       console.log('failed to fetch data from /questions/' + req.params.product_id, err)
     })
