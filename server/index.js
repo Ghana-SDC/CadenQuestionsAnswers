@@ -5,7 +5,7 @@ require('../database/config/index.js');
 const router = require('./router/index.js');
 
 const app = express();
-const PORT = 3000;
+const PORT = 3227;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
