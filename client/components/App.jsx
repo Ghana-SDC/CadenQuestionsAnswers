@@ -36,7 +36,7 @@ export default class App extends React.Component {
 
   getQuestionData() {
     this.getAnswerData();
-    axios.get('/questions/' + this.state.productId).then(data => {
+    axios.get('http://localhost:3227/questions/' + this.state.productId).then(data => {
       data.data.sort((a, b) => {
         return a.id - b.id
       })
@@ -52,7 +52,7 @@ export default class App extends React.Component {
   }
 
   getAnswerData() {
-    axios.get('/answers').then(data => {
+    axios.get('http://localhost:3227/answers').then(data => {
       this.setState({
         productId: 1,
         questions: this.state.questions,
@@ -67,7 +67,7 @@ export default class App extends React.Component {
   render() {
     if (this.state.questions.length > 0) {
       return (
-        <ContainerDiv>
+        <ContainerDiv id="app-component">
           <H2>Customer questions & answers</H2>
           <Search />
           {this.state.questions.map((question, index)=> <QuestionsAnswersVotesContainer votes={question.votes} question={question} getQuestionData={this.getQuestionData.bind(this)} answers={this.state.answers} key={index} />)}

@@ -3,9 +3,12 @@ const bodyParser = require('body-parser');
 const path = require('path');
 require('../database/config/index.js');
 const router = require('./router/index.js');
+const cors = require('cors');
 
 const app = express();
 const PORT = 3227;
+
+app.use(cors());
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));

@@ -4,9 +4,6 @@
   "description": "",
   "main": "index.js",
   "jest": {
-    "setupFiles": [
-      "./tests/jestsetup.js"
-    ],
     "collectCoverage": true,
     "notify": true,
     "verbose": true,
@@ -14,11 +11,10 @@
       "js",
       "jsx",
       "json"
-    ],
-    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$np"
+    ]
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "nodemon server/index.js",
     "setup:db": "node database/models/index.js",
     "build": "node_modules/.bin/webpack -w"
@@ -33,9 +29,13 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
     "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "express": "^4.16.3",
     "jest": "^23.1.0",
+    "jest-enzyme": "^6.0.1",
+    "jest-styled-components": "^5.0.1",
     "nodemon": "^1.17.5",
     "pg": "^7.4.3",
     "pg-hstore": "^2.3.2",
