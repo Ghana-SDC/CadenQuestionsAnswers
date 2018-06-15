@@ -40,7 +40,7 @@ const Votes = (props) => {
         <I className="fas fa-caret-up"></I>
       </CaretLi>
       <Li>
-        {props.votes || 0}
+        {props.votes}
       </Li>
       <VotesLi>
         votes

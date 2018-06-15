@@ -26,28 +26,26 @@ export default class QuestionsAnswersVotesContainer extends React.Component {
     if (direction === 'up') {
       vote++;
     }
-    if (direction === 'down' && vote-- > 0) {
+    if (direction === 'down' && vote >= 0) {
       vote--;
     }
     axios.put('/questions/' + id, {
       votes: vote
     }).then(() => {
       this.props.getQuestionData();
-      axios.get('/questions/' + id).then(data => {
         if (direction === 'up') {
           this.setState({
-            votes: data.data.votes,
+            votes: vote,
             isUpvoted: true,
             isDownvoted: false
           })
-        } else if (direction === 'down' && vote-- > 0) {
+        } else if (direction === 'down' && vote >= 0) {
           this.setState({
-            votes: data.data.votes,
+            votes: vote,
             isUpvoted: false,
             isDownvoted: true
           })
         }
-      })
       console.log('success put from client')
     }).catch(err => {
       console.log('failed to put from client', err)

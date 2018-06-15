@@ -14,7 +14,7 @@ router.route('/questions/:id')
   .get(productController.get)
   .put(questionsIdController.put)
 
-router.route('/products/:product_id')
-  .get(productController.get);
+// router.route('/products/:product_id')
+//   .get(productController.get);
 
 module.exports = router;

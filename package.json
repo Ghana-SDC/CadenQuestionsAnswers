@@ -17,7 +17,8 @@
     "test": "jest",
     "start": "nodemon server/index.js",
     "setup:db": "node database/models/index.js",
-    "build": "node_modules/.bin/webpack -w"
+    "build": "node_modules/.bin/webpack -w",
+    "seed": "psql fec postgres <database/seeders/questionSeed.sql && psql fec postgres <database/seeders/answerSeed.sql"
   },
   "keywords": [],
   "author": "",
@@ -30,6 +31,7 @@
     "babel-preset-react": "^6.24.1",
     "body-parser": "^1.18.3",
     "cors": "^2.8.4",
+    "docker": "^1.0.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "express": "^4.16.3",
@@ -46,6 +48,9 @@
     "styled-components": "^3.3.2"
   },
   "devDependencies": {
+    "grunt": "^1.0.3",
+    "grunt-aws": "^0.6.2",
+    "grunt-contrib-jshint": "^1.1.0",
     "webpack": "^4.10.2",
     "webpack-cli": "^2.1.4"
   }

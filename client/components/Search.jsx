@@ -18,7 +18,6 @@ const Input = styled.input`
   padding-left: 30px;
 `
 
-
 const Search = (props) => {
   if (props.noQuestions) {
     return (

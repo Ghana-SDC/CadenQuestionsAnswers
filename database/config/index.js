@@ -19,7 +19,7 @@ sequelize.authenticate()
     console.log('Connected to DB');
   })
   .catch(err => {
-    console.log('Failed to connect to DB');
+    console.log('Failed to connect to DB', err);
   });
 
 module.exports = sequelize;

@@ -27,7 +27,7 @@ export default class App extends React.Component {
     super()
     
     this.state = {
-      productId: 1,
+      productId: 74,
       questions: [],
       answers: [],
     }
@@ -36,12 +36,12 @@ export default class App extends React.Component {
 
   getQuestionData() {
     this.getAnswerData();
-    axios.get('http://localhost:3227/questions/' + this.state.productId).then(data => {
+    axios.get('/questions/' + this.state.productId).then(data => {
       data.data.sort((a, b) => {
         return a.id - b.id
       })
       this.setState({
-        productId: 1,
+        productId: this.state.productId,
         questions: data.data,
         answers: this.state.answers
       })
@@ -52,9 +52,9 @@ export default class App extends React.Component {
   }
 
   getAnswerData() {
-    axios.get('http://localhost:3227/answers').then(data => {
+    axios.get('/answers').then(data => {
       this.setState({
-        productId: 1,
+        productId: this.state.productId,
         questions: this.state.questions,
         answers: data.data
       })
@@ -66,7 +66,7 @@ export default class App extends React.Component {
 
   render() {
     if (this.state.questions.length > 0) {
-      return (
+      return ( 
         <ContainerDiv id="app-component">
           <H2>Customer questions & answers</H2>
           <Search />
@@ -75,18 +75,12 @@ export default class App extends React.Component {
       )
     } else {
       return (
-        <ContainerDiv>
+        <ContainerDiv id="app-component">
           <H2>Have a question?</H2>
           <Div>Find answers in product info, Q&As, reviews</Div>
           <Search noQuestions={true}/>
         </ContainerDiv>
       )
     }
-  }
+  } 
 }
-
-//upvoting would throw the upvoted item into a random spot in the array of questions
-
-//created a page for no questions/answers, but when one item was null the whole list would show an error
-
-//trying to render the "see more answers" two at a time, but at any time can collapse the answers to show only one again
