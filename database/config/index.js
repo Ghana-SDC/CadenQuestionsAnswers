@@ -9,8 +9,8 @@ const Sequelize = require('sequelize');
 //   }
 // })
 
-const sequelize = new Sequelize('fec', 'cadenwang', 'cadenwang', {
-  host: 'localhost',
+const sequelize = new Sequelize('fec', 'postgres', 'postgres', {
+  host: 'db',
   dialect: 'postgres'
 })
 

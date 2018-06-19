@@ -22,6 +22,7 @@ const Div = styled.div`
   padding-bottom: 10px;
 `
 
+const dburl = 'http://ec2-52-91-224-170.compute-1.amazonaws.com:3227';
 export default class App extends React.Component {
   constructor() {
     super()
@@ -36,7 +37,7 @@ export default class App extends React.Component {
 
   getQuestionData() {
     this.getAnswerData();
-    axios.get('/questions/' + this.state.productId).then(data => {
+    axios.get(dburl + '/questions/' + this.state.productId).then(data => {
       data.data.sort((a, b) => {
         return a.id - b.id
       })
@@ -52,7 +53,7 @@ export default class App extends React.Component {
   }
 
   getAnswerData() {
-    axios.get('/answers').then(data => {
+    axios.get(dburl + '/answers').then(data => {
       this.setState({
         productId: this.state.productId,
         questions: this.state.questions,

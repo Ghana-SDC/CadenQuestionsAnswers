@@ -1,8 +1,8 @@
-version: '3'
+version: '2'
 services:
   webapp:
     
-    image: client
+    image: cawa7995/client
     ports:
       - "3227:3227"
     links: 
@@ -13,9 +13,6 @@ services:
       DATABASE_URL: postgresql://postgres:postgres@db
   db:
     image: postgres:10
-    volumes: 
-      - ./answerSeed.sql:/docker-entrypoint-initdb.d/answerSeed.sql
-      - ./questionSeed.sql:/docker-entrypoint-initdb.d/questionSeed.sql
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
