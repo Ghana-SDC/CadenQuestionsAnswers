@@ -1,63 +1,41 @@
-const Sequelize = require('sequelize');
-const sequelize = require('../config/index.js');
+const Sequelize = require("sequelize");
+const sequelize = require("../config/index.js");
 
-const Question = sequelize.define('question', {
-  id: {
-    allowNull: false,
-    autoIncrement: true,
-    primaryKey: true,
-    type: Sequelize.INTEGER
+const STI = sequelize.define(
+  "sti",
+  {
+    id: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: Sequelize.INTEGER
+    },
+    product_id: {
+      allowNull: true,
+      type: Sequelize.INTEGER
+    },
+    text: {
+      allowNull: false,
+      type: Sequelize.TEXT
+    },
+    votes: {
+      allowNull: false,
+      type: Sequelize.INTEGER
+    },
+    date: {
+      allowNull: true,
+      type: Sequelize.STRING
+    },
+    question_id: {
+      allowNull: true,
+      type: Sequelize.INTEGER
+    }
   },
-  product_id: {
-    type: Sequelize.INTEGER
-  },
-  category: {
-    type: Sequelize.STRING
-  },
-  text: {
-    type: Sequelize.STRING
-  },
-  votes: {
-    type: Sequelize.INTEGER
+  {
+    timestamps: false
   }
-}, {
-  timestamps: false
-});
+);
 
-const Answer = sequelize.define('answer', {
-  id: {
-    allowNull: false,
-    autoIncrement: true,
-    primaryKey: true,
-    type: Sequelize.INTEGER
-  },
-  question_id: {
-    type: Sequelize.INTEGER
-  },
-  text: {
-    type: Sequelize.STRING
-  },
-  votes: {
-    type: Sequelize.INTEGER
-  },
-  date: {
-    type: Sequelize.STRING
-  }
-},
-{
-timestamps: false
-});
+STI.sync();
 
-Answer.belongsTo(Question)
-Question.hasMany(Answer);
-
-// Question.sync({force: true});
-// Answer.sync({force: true});
-
-Question.sync();
-Answer.sync();
-
-module.exports = {
-  Question,
-  Answer
-}
+module.exports = STI;

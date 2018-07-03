@@ -1,11 +1,13 @@
 /*psql 'database' 'user' <db/sql/something/osmething *where the seed file is*/
 /*  psql fec cadenwang <database/seeders/questionSeed.sql  */
-INSERT INTO questions (product_id, id, category, text, votes) VALUES
+INSERT INTO questions
+  (product_id, id, category, text, votes)
+VALUES
   (1, 1, 'furniture', 'What is this couch normally used for?', 0),
   (1, 2, 'furniture', 'Does this couch pull out? I read in the description that it does, but it doesnt look like it.', 2),
   (2, 3, 'furniture', 'Does this mattress squeak?  I''ve had pretty bad luck when it comes to picking good mattresses.', 3),
   (3, 4, 'furniture', 'How many times can you fold it? I want to be able to bring it to my son''s soccer games', 2),
-  (4, 5, 'furniture',  null, null),
+  (4, 5, 'furniture', null, null),
   (5, 6, 'furniture', 'Can this shelf be used for other things?', 1),
   (6, 7, 'furniture', 'Is this chair foldable?', 0),
   (7, 8, 'furniture', 'Does this go in the dining room?', 0),
@@ -121,4 +123,5 @@ INSERT INTO questions (product_id, id, category, text, votes) VALUES
   (97, 118, 'backyard', 'What is the diameter of the center', 0),
   (98, 119, 'backyard', 'What is the practical use of this?', 0),
   (99, 120, 'backyard', 'How often does this need watering', 0),
-  (100, 121, 'backyard', 'Does this come with 2-day free shipping?', 2)
+  (100, 121, 'backyard', 'Does this come with 2-day free shipping?', 2);
+ALTER SEQUENCE "question_id_seq" RESTART WITH 122;

@@ -1,4 +1,6 @@
-INSERT INTO answers (id, question_id, text, votes, date) VALUES
+INSERT INTO answers
+  (id, "questionId", text, votes, date)
+VALUES
   (1, 1, 'i have one in my room and it really makes the place more homely', 0, 'January 3, 2012'),
   (2, 2, 'Yes, it pulls out into a king sized bed, perfect for hotels or guests!', 2, 'January 26, 2012'),
   (3, 3, 'Only if you put it on a squeaky wooden frame', 6, 'April 17, 2012'),
@@ -227,4 +229,5 @@ INSERT INTO answers (id, question_id, text, votes, date) VALUES
   (226, 85, 'I hear that this water is actually raised in the mountains near the hot springs, fed only the wholest of grains.  Definitely would recommend!', 5, 'April 20, 2014'),
   (227, 85, 'I don''t really get what all the hype is about, it tastes the same as caged-water', 5, 'Feburary 2, 2016'),
   (228, 85, 'The water is cage-free; However, they are not antibiotics free!  They should be labeling it as so', 5, 'July 31, 2016'),
-  (229, 85, 'Yes, these are cage-free.', 5, 'November 22, 2016')
+  (229, 85, 'Yes, these are cage-free.', 5, 'November 22, 2016');
+ALTER SEQUENCE "answers_id_seq" RESTART WITH 230;

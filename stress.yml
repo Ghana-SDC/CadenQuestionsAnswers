@@ -1,0 +1,16 @@
+config:
+  target: 'http://127.0.0.1:3227'
+  phases:
+    - duration: 100
+      arrivalRate: 100
+  processor: './my-function.js'
+  defaults:
+    headers:
+      x-my-service-auth: '987401838271002188298567'
+scenarios:
+  - flow:
+    - function: 'setupSomeData'
+    # - get:
+    #     url: '/sti?product_id={{ query }}'
+    - get:
+        url: '/sti/answers?id={{ query }}'
