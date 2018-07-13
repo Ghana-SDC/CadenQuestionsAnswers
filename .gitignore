@@ -2,3 +2,5 @@ node_modules
 aws-credentials.json
 caden.pem
 database/generator/fake-sti.csv
+newrelic.js
+newrelic_agent.log

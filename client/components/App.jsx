@@ -36,7 +36,7 @@ export default class App extends React.Component {
 
   getQuestionData() {
     axios
-      .get(`/sti?product_id=${this.state.productId}`)
+      .get(`http://52.15.44.21/sti?product_id=${this.state.productId}`)
       .then(data => {
         data.data.sort((a, b) => a.id - b.id);
         this.setState({
@@ -46,7 +46,9 @@ export default class App extends React.Component {
       .then(() => {
         axios
           .get(
-            `/sti/answers?question_ids=${JSON.stringify(this.state.questions)}`
+            `http://52.15.44.21/sti/answers?question_ids=${JSON.stringify(
+              this.state.questions
+            )}`
           )
           .then(data => {
             this.setState({

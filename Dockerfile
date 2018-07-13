@@ -1,6 +1,6 @@
 FROM node:10
 
-WORKDIR /cadenza/documents/FEC/CadenQuestionsAnswers
+WORKDIR /Users/colemichaels/Desktop/SDC\ project/CadenQuestionsAnswers
 
 COPY package*.json ./
 
