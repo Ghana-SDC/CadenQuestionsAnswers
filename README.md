@@ -1,0 +1,30 @@
+# System Design Questions And Answers Component
+
+My System Design Capstone project for HRLA22. This is a microservice I chose to make the back end for which is meant to mimic Amazons product page. Each person on our team made their own microservice which were rendered together through a proxy server. Each microservice had multiple instances where traffic was distributed by a NGINX load balancer.
+
+Each microservice will no longer render as each AWS instance has since been disabled.
+
+In order to deploy make sure the database config is pointed to the correct host and the username is correct. Create the database and ensure it's named "sti".
+
+I generated 10 Million data entries into my Single Table Inheritance table using "generator-sti.js". So for simplicities sake I run this file on my hosted instance and enter data remotely.
+
+I stress tested this microservice using Loader.io mimicking 100 users each making 1000 requests per second for a minute. My average response time was around 45ms.
+
+My Proxy Server: https://github.com/cmichaelsd/Coles-SystemDesign-Proxy
+
+### Technologies Used:
+
+- React
+- Axios
+- PSQL
+- Jest
+- Grunt
+- Enzyme
+
+### How To Run:
+
+- Create the database "frontend_capstone" within PSQL, alter username as needed
+- Run "npm run seed"
+- Build a bundle.js by running "npm run build"
+- Run "npm start"
+- Connect to localhost:3000
