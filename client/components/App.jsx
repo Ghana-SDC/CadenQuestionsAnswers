@@ -22,7 +22,7 @@ const Div = styled.div`
   padding-bottom: 10px;
 `;
 
-export default class App extends React.Component {
+class App extends React.Component {
   constructor() {
     super();
 
@@ -36,7 +36,7 @@ export default class App extends React.Component {
 
   getQuestionData() {
     axios
-      .get(`http://52.15.44.21/sti?product_id=${this.state.productId}`)
+      .get(`/sti?product_id=${this.state.productId}`)
       .then(data => {
         data.data.sort((a, b) => a.id - b.id);
         this.setState({
@@ -46,9 +46,7 @@ export default class App extends React.Component {
       .then(() => {
         axios
           .get(
-            `http://52.15.44.21/sti/answers?question_ids=${JSON.stringify(
-              this.state.questions
-            )}`
+            `/sti/answers?question_ids=${JSON.stringify(this.state.questions)}`
           )
           .then(data => {
             this.setState({
@@ -92,3 +90,5 @@ export default class App extends React.Component {
     }
   }
 }
+
+export default App;

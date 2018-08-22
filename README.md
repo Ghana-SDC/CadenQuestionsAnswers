@@ -25,12 +25,12 @@ My Proxy Server: https://github.com/cmichaelsd/Coles-SystemDesign-Proxy
 
 #### PSQL
 
-- Host a PSQL instance and create a database
-- Define "sti" table based on database/models
+- Host a PSQL instance and create / connect to database
+- Define "stis" table based on database/models folder
 - SCP generator-sti.js to PSQL instance
 - Install Node and run "npm init" & "npm install faker fs"
 - Run "generator-sti.js"
-- In PSQL run "copy sti from '/path/to/fake-sti.csv' delimiter ',' csv WITH NULL AS 'NULL';"
+- In PSQL run "\copy stis (product_id, text, votes, date, question_id) from /path/to/fake-sti.csv DELIMITER ',' csv NULL AS 'NULL';"
 
 #### Microservice
 
@@ -40,5 +40,4 @@ My Proxy Server: https://github.com/cmichaelsd/Coles-SystemDesign-Proxy
 - Run "docker-compose up -d"
 - Build a bundle.js by running "npm run build"
 - Run "npm start"
-- Connect to localhost:3227
-
+- Connect to localhost:3000

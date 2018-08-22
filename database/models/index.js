@@ -2,7 +2,7 @@ const Sequelize = require("sequelize");
 const sequelize = require("../config/index.js");
 
 const STI = sequelize.define(
-  "sti",
+  "stis",
   {
     id: {
       allowNull: false,
