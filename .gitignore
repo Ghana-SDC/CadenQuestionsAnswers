@@ -6,4 +6,7 @@ newrelic.js
 newrelic_agent.log
 package-lock.json
 .DS_Store
+public/.DS_Store
+public/app.js
+publicapp-server.js
 fake-sti.csv
