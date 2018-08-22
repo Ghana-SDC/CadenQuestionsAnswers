@@ -1,5 +1,7 @@
 # System Design Questions And Answers Component
 
+![aug-22-2018 02-54-08](https://user-images.githubusercontent.com/34247773/44457363-da9b2900-a5b7-11e8-9426-538671fc2821.gif)
+
 My System Design Capstone project for HRLA22. This is a microservice I chose to make the back end for which is meant to mimic Amazons product page. Each person on our team made their own microservice which were rendered together through a proxy server. Each microservice had multiple instances where traffic was distributed by a NGINX load balancer.
 
 Each microservice will no longer render as each AWS instance has since been disabled.
