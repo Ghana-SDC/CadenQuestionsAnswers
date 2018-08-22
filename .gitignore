@@ -8,5 +8,5 @@ package-lock.json
 .DS_Store
 public/.DS_Store
 public/app.js
-publicapp-server.js
+public/app-server.js
 fake-sti.csv
