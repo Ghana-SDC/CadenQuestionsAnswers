@@ -5,6 +5,7 @@ database/generator/fake-sti.csv
 newrelic.js
 newrelic_agent.log
 package-lock.json
+client/.DS_Store
 .DS_Store
 public/.DS_Store
 public/app.js
